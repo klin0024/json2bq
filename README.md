@@ -22,5 +22,5 @@ python3 json2bq.py --project=gcp-expert-sandbox-allen \\<br>
 --credential=gcp-expert-sandbox-allen-c1fcfd19238a.json  \\<br>
 --temp_bucket=gcp-expert-sandbox-allen-temp_bucket \\<br>
 --input=gs://gcp-expert-sandbox-allen/folder/data.json \\<br>
---gcp-expert-sandbox-allen:dataset.table \\<br>
+--output=gcp-expert-sandbox-allen:dataset.table \\<br>
 --schema="$schema"
