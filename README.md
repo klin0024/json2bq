@@ -15,7 +15,7 @@ Var           | Value                                         | Description
 
 pip3 install -r requirements.txt
 
-export schema="{\"fields\":$(generate-schema < data.json)}"
+export schema="{\\"fields\\":$(generate-schema < data.json)}"
 
 python3 json2bq.py --project=gcp-expert-sandbox-allen \\<br>
 --region=us-central1 \\<br>
