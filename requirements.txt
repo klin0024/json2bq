@@ -1,0 +1,7 @@
+bigquery_schema_generator
+apache-beam[gcp]
+argparse
+logging
+re
+os
+json
