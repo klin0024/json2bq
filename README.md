@@ -8,14 +8,12 @@ Var           | Value                                         | Description
 --temp_bucket | gcp-expert-sandbox-allen-temp_bucket	      | 暫存bucket名稱
 --input	      | gs://gcp-expert-sandbox-allen/folder/data.json| 輸入的JSON位置
 --output	  | gcp-expert-sandbox-allen:dataset.table	      | 輸出bq的表
---schema	  | '{"fields":<br>[{"name":"usage",<br>"type":"record",<br>"fields":<br>[{"name":"cpu",<br>"type":"STRING"},<br>{"name":"mem",<br>"type":"STRING"}]}]' | schema json
+--schema	  | '[{"name":"usage",<br>"type":"record",<br>"fields":<br>[{"name":"cpu",<br>"type":"STRING"},<br>{"name":"mem",<br>"type":"STRING"}]}]' | schema json
 --skip_json_lines | 0                                       | Default: 0 , 忽略json的行數
 
 # json2bq.py 使用說明
 
 pip3 install -r requirements.txt
-
-export schema="{\\"fields\\":$(generate-schema < data.json)}"
 
 python3 json2bq.py --project=gcp-expert-sandbox-allen \\<br>
 --region=us-central1 \\<br>
@@ -23,4 +21,4 @@ python3 json2bq.py --project=gcp-expert-sandbox-allen \\<br>
 --temp_bucket=gcp-expert-sandbox-allen-temp_bucket \\<br>
 --input=gs://gcp-expert-sandbox-allen/folder/data.json \\<br>
 --output=gcp-expert-sandbox-allen:dataset.table \\<br>
---schema="$schema"
+--schema="$(generate-schema < data.json)"
